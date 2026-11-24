@@ -219,7 +219,8 @@
       const el = document.createElement('div');
       el.className = 'pin'; el.dataset.cat = p.cat; el.setAttribute('role', 'button'); el.tabIndex = 0;
       el.innerHTML = `<b>${p.n}</b><span class="tag"></span>`;
-      el.addEventListener('click', e => { e.stopPropagation(); openPlace(p, true); });
+      el.addEventListener('pointerdown', e => e.stopPropagation());
+      el.addEventListener('click', e => { e.stopPropagation(); e.preventDefault(); openPlace(p, true); });
       el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPlace(p, true); } });
       pins.set(p.slug, el);
     }
@@ -689,6 +690,7 @@
     window.addEventListener('resize', () => setTimeout(drawBorder, 50));
     v.addHandler('canvas-click', e => {
       if (!e.quick) return;
+      if (e.originalTarget && e.originalTarget.closest && e.originalTarget.closest('.pin, .mem-pin, .mem-card')) return;
       if (dlgOv) return;
       if (mode) {
         const pt = here(e);
