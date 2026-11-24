@@ -1,0 +1,19 @@
+{
+  "base": "tiles/base/",
+  "cover": "tiles/cover.json",
+  "land": "tiles/land.webp",
+  "ai": "tiles/ai/",
+  "aiCover": "tiles/ai_cover.json",
+  "data": "data/places.json",
+  "search": "data/search.json",
+  "traffic": {
+    "traffic": "data/traffic.json",
+    "transit": "data/transit.json",
+    "atlas": "assets/atlas.json",
+    "outline": "data/outline.json",
+    "vehicles": "assets/vehicles.png",
+    "trains": "assets/trains.png"
+  },
+  "ver": "14",
+  "api": "/api"
+}

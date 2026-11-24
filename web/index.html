@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixel Trichy</title>
+<meta name="description" content="Tiruchirappalli as one explorable pixel-art isometric map, from Mukkombu to Kallanai.">
+<meta name="theme-color" content="#09090b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pixel Trichy">
+<meta property="og:description" content="Tiruchirappalli as one explorable pixel-art isometric map, from Mukkombu to Kallanai.">
+<meta property="og:image" content="assets/og.jpg">
+<link rel="icon" href="assets/favicon-32.png?v=2" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/favicon-16.png?v=2" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="assets/favicon-180.png?v=2" sizes="180x180">
+<link rel="preload" href="vendor/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="viewer.css?v=16">
+<script src="vendor/openseadragon.min.js"></script>
+</head>
+<body>
+<div id="map" role="application" aria-label="Map of Tiruchirappalli. Drag to move, scroll or pinch to zoom."></div>
+
+<div class="loading" role="status" aria-live="polite"><div class="loading-card"><span class="loading-logo">Pixel Trichy</span><span class="loading-bar"><i></i></span><span class="loading-msg">Drawing the city…</span></div></div>
+
+<header class="topbar">
+  <a class="logo surface" href="./" aria-label="Pixel Trichy, whole map">
+    <img class="mark" src="assets/logo.png?v=2" alt="" width="640" height="445">
+    <span class="logo-en">PIXEL TRICHY</span><span class="logo-ta" lang="ta">திருச்சி</span>
+  </a>
+  <div class="searchwrap">
+    <form class="search surface" role="search" autocomplete="off">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="q" placeholder="A place, a street or lat, long" aria-label="Search the map" aria-controls="results" aria-autocomplete="list">
+      <kbd aria-hidden="true">/</kbd>
+    </form>
+    <div class="results surface" id="results" role="listbox" hidden></div>
+  </div>
+  <div class="topspace" aria-hidden="true"></div>
+</header>
+
+<nav class="rail rail-left surface" aria-label="Explore"></nav>
+<div class="rightcol">
+  <div class="util surface"></div>
+  <div class="live surface" hidden aria-live="off"><span class="dot" aria-hidden="true"></span><span class="live-now"></span><span class="live-sep" aria-hidden="true">·</span><span class="live-total"></span></div>
+  <nav class="rail rail-right surface" aria-label="Map tools"></nav>
+</div>
+
+<div class="modebar surface" role="status" hidden><span class="modebar-msg"></span><button type="button" class="btn btn-ghost btn-icon-sm" aria-label="Close"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+
+<aside class="dock surface" aria-live="polite" hidden></aside>
+<section class="stripwrap" aria-label="Places on this map" hidden>
+  <button class="sarrow l btn btn-outline btn-icon" type="button" aria-label="Scroll places left"><svg class="i" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+  <nav class="strip surface"></nav>
+  <button class="sarrow r btn btn-outline btn-icon" type="button" aria-label="Scroll places right"><svg class="i" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+</section>
+
+<div class="mini" role="img" aria-label="Where you are on the map, north to the top right" hidden>
+  <canvas width="240" height="120"></canvas>
+  <span class="mini-n" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M5 0 10 12 5 9 0 12Z"/></svg>N</span>
+</div>
+
+<footer class="foot">
+  <div class="credit surface">© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://overturemaps.org/">Overture Maps</a></div>
+  <div class="made surface"><span class="made-txt">Made with</span><svg class="i heart" viewBox="0 0 24 24" aria-label="love"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg><span class="made-txt2">for Trichy</span><span aria-hidden="true">–</span><a href="https://mubasil.me" target="_blank" rel="noopener">Mubasil</a></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script src="viewer.js?v=16" data-config="config.json?v=14"></script>
+</body>
+</html>

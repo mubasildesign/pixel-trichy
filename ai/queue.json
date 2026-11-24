@@ -1,0 +1,47 @@
+{
+ "prompt": "Redraw this isometric city map as detailed pixel art in the style of a classic isometric city-builder game. Keep every building, road, pond, rock and tree in exactly the same position, size and shape; do not add or remove buildings. Add small details: clay-tile and concrete roofs, rooftop water tanks, small shop signboards, coconut palms and neem trees, people, scooters and autorickshaws on the roads. Warm sunlit palette, crisp 1-pixel outlines, no blur.",
+ "chunks": [
+  {
+   "id": "c58_32",
+   "x": 51968,
+   "y": 28672,
+   "size": 1024,
+   "overlap": 128,
+   "near": "rockfort",
+   "status": "done",
+   "review": "rejected",
+   "score": 0.272,
+   "seed": 8630,
+   "model": "qwen-image-2.1-turbo",
+   "seconds": 461.0
+  },
+  {
+   "id": "c48_28",
+   "x": 43008,
+   "y": 25088,
+   "size": 1024,
+   "overlap": 128,
+   "near": "srirangam-temple",
+   "status": "planned",
+   "review": "pending",
+   "score": null,
+   "seed": 7316,
+   "model": null,
+   "seconds": null
+  },
+  {
+   "id": "c48_29",
+   "x": 43008,
+   "y": 25984,
+   "size": 1024,
+   "overlap": 128,
+   "near": "srirangam-temple",
+   "status": "planned",
+   "review": "pending",
+   "score": null,
+   "seed": 7317,
+   "model": null,
+   "seconds": null
+  }
+ ]
+}

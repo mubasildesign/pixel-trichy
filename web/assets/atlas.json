@@ -1,0 +1,1 @@
+{"vehicles": {"cell": [48, 44], "origin": [24, 32], "headings": 16, "rows": {"scooter": [0, 7], "cycle": [7, 3], "auto": [10, 1], "car": [11, 7], "bus": [18, 4], "truck": [22, 2]}}, "trains": {"cell": [80, 64], "origin": [40, 44], "headings": 16, "rows": {"loco": [0, 2], "coach": [2, 3], "wagon": [5, 2]}, "len": {"loco": 19, "coach": 21, "wagon": 13.5}}}

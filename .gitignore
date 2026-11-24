@@ -1,0 +1,21 @@
+.venv/
+.venv-ai/
+data/raw/
+data/scene.pkl
+tiles/
+ai/src/
+ai/out/
+ai/lora/
+dist/
+__pycache__/
+
+# built or local-only data (rebuild with the pipeline; see README "Rebuild")
+/data/
+web/data/.cache*
+*.db
+*.db-journal
+*.log
+web/tiles
+ai/pilot/
+dist/
+.DS_Store
