@@ -1,7 +1,7 @@
 {
-  "base": "tiles/base/",
-  "cover": "tiles/cover.json",
-  "land": "tiles/land.webp",
+  "base": "https://pub-0aad8be0a30945d795d6cc58bc27c0af.r2.dev/tiles/base/",
+  "cover": "https://pub-0aad8be0a30945d795d6cc58bc27c0af.r2.dev/tiles/cover.json",
+  "land": "https://pub-0aad8be0a30945d795d6cc58bc27c0af.r2.dev/tiles/land.webp",
   "ai": "tiles/ai/",
   "aiCover": "tiles/ai_cover.json",
   "data": "data/places.json",

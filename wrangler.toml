@@ -1,5 +1,5 @@
 name = "pixel-trichy"
-pages_build_output_dir = "dist"
+pages_build_output_dir = "web"
 compatibility_date = "2024-11-01"
 
 # npx wrangler d1 create pixel-trichy   -> paste the database_id below
