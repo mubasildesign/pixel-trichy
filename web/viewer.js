@@ -246,11 +246,15 @@
       pins.forEach((el, slug) => { const p = places.find(q => q.slug === slug); $('.tag', el).textContent = nm(p); el.title = nm(p); el.setAttribute('aria-label', nm(p)); el.classList.toggle('on', !!cur && cur.slug === slug); });
     }
     strip.addEventListener('click', e => { const c = e.target.closest('.card'); if (c) openPlace(places.find(p => p.slug === c.dataset.slug), true); });
-    const syncStack = () => document.documentElement.style.setProperty('--stack', stripWrap.hidden ? '0px' : (stripWrap.offsetHeight + 8) + 'px');
-    if (window.ResizeObserver) new ResizeObserver(syncStack).observe(stripWrap);
+    const syncChrome = () => {
+      const s = document.documentElement.style;
+      s.setProperty('--stack', stripWrap.hidden ? '0px' : (stripWrap.offsetHeight + 8) + 'px');
+      s.setProperty('--dock', dock.hidden ? '0px' : (dock.offsetHeight + 8) + 'px');
+    };
+    if (window.ResizeObserver) { const ro = new ResizeObserver(syncChrome); ro.observe(stripWrap); ro.observe(dock); }
     function togglePlaces(force) {
       const on = force ?? stripWrap.hidden;
-      stripWrap.hidden = !on; syncStack(); document.body.classList.toggle('strip-on', on); tools.places.setAttribute('aria-pressed', on);
+      stripWrap.hidden = !on; syncChrome(); document.body.classList.toggle('strip-on', on); tools.places.setAttribute('aria-pressed', on);
       if (on) { renderStrip(); const c = $('.card.on', strip); if (c) c.scrollIntoView({ inline: 'center', block: 'nearest' }); }
     }
     function renderDock() {
@@ -266,8 +270,9 @@
       dock.hidden = false;
       $('.x', dock).addEventListener('click', closeDock);
       $('.prev', dock).addEventListener('click', () => step(-1)); $('.next', dock).addEventListener('click', () => step(1));
+      syncChrome();
     }
-    function closeDock() { cur = null; dock.hidden = true; pins.forEach(el => el.classList.remove('on')); $$('.card', strip).forEach(c => c.classList.remove('on')); history.replaceState(null, '', location.pathname + location.search); clearSpot(); }
+    function closeDock() { cur = null; dock.hidden = true; syncChrome(); pins.forEach(el => el.classList.remove('on')); $$('.card', strip).forEach(c => c.classList.remove('on')); history.replaceState(null, '', location.pathname + location.search); clearSpot(); }
     function $$(s, el = document) { return [...el.querySelectorAll(s)]; }
     function openPlace(p, fly) {
       cur = p; if (stripWrap.hidden) togglePlaces(true); renderDock(); renderStrip();
